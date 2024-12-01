@@ -1,13 +1,11 @@
 {
-  "name": "fullstack-typescript",
-  "version": "2.0.1",
-  "description": "",
+  "name": "advent-of-code-2024",
+  "version": "1.0.0",
   "main": "index.js",
   "engines": {
     "node": ">18"
   },
   "scripts": {
-    "clean-up-example-code": "node clean-up-example-code.js && rimraf clean-up-example-code.js",
     "clean": "rimraf dist",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "start": "node index.js",
@@ -25,18 +23,9 @@
   "keywords": [
     "typescript",
     "react",
-    "starter-kit",
-    "vite",
-    "fullstack",
-    "express",
-    "node"
+    "vite"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gilamran/fullstack-typescript.git"
-  },
   "license": "MIT",
-  "author": "Gil Amran",
   "dependencies": {
     "axios": "^1.7.7",
     "body-parser": "^1.20.3",

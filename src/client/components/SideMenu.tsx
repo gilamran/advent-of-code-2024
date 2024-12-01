@@ -1,10 +1,5 @@
-import FetchIcon from '@mui/icons-material/CloudDownload';
-import UsageIcon from '@mui/icons-material/Code';
 import HomeIcon from '@mui/icons-material/Home';
-import RouterIcon from '@mui/icons-material/Storage';
-import StyledIcon from '@mui/icons-material/Style';
-import LazyIcon from '@mui/icons-material/SystemUpdateAlt';
-import { Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import Toolbar from '@mui/material/Toolbar';
@@ -44,22 +39,7 @@ export const SideMenu: React.FC = () => {
           <ListItemLink to='/' primary='Home' icon={<HomeIcon />} />
         </ListItem>
         <ListItem disablePadding>
-          <ListItemLink to='/usage' primary='Usage' icon={<UsageIcon />} />
-        </ListItem>
-      </List>
-      <Divider />
-      <List>
-        <ListItem disablePadding>
-          <ListItemLink to='/fetch-example' primary='Fetch' icon={<FetchIcon />} />
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemLink to='/lazy-example' primary='Lazy Loading' icon={<LazyIcon />} />
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemLink to='/styled-example' primary='Styled Components' icon={<StyledIcon />} />
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemLink to='/router-example/1234' primary='React-Router' icon={<RouterIcon />} />
+          <ListItemLink to='/day1' primary='Day 1' icon={<HomeIcon />} />
         </ListItem>
       </List>
     </Drawer>
