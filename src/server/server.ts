@@ -13,6 +13,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.use('/assets', express.static(path.join(process.cwd(), 'assets')));
+app.use('/inputs', express.static(path.join(process.cwd(), 'inputs')));
 app.use(staticsRouter());
 app.use(pagesRouter());
 

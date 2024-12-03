@@ -1,4 +1,5 @@
 import HomeIcon from '@mui/icons-material/Home';
+import CalculateIcon from '@mui/icons-material/Calculate';
 import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
@@ -39,13 +40,16 @@ export const SideMenu: React.FC = () => {
           <ListItemLink to='/' primary='Home' icon={<HomeIcon />} />
         </ListItem>
         <ListItem disablePadding>
-          <ListItemLink to='/day1' primary='Day 1' icon={<HomeIcon />} />
+          <ListItemLink to='/day1' primary='Day 1' icon={<CalculateIcon />} />
         </ListItem>
         <ListItem disablePadding>
-          <ListItemLink to='/day2' primary='Day 2' icon={<HomeIcon />} />
+          <ListItemLink to='/day2' primary='Day 2' icon={<CalculateIcon />} />
         </ListItem>
         <ListItem disablePadding>
-          <ListItemLink to='/day3' primary='Day 3' icon={<HomeIcon />} />
+          <ListItemLink to='/day3' primary='Day 3' icon={<CalculateIcon />} />
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemLink to='/day4' primary='Day 4' icon={<CalculateIcon />} />
         </ListItem>
       </List>
     </Drawer>

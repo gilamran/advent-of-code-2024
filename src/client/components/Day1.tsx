@@ -1,16 +1,9 @@
-import { Button, CardHeader } from '@mui/material';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
 import React from 'react';
-import { Day1Input } from './day1-input';
+import { DayView } from './DayView';
 
 export const Day1: React.FC = () => {
-  const [diff, setDiffResult] = React.useState<number>(0);
-  const [similarityScore, setSimilarityScore] = React.useState<number>(0);
-
-  const getColumns = () => {
-    const lines = Day1Input.split('\n');
+  const getColumns = (input: string) => {
+    const lines = input.split('\n');
     const leftColumn: number[] = [];
     const rightColumn: number[] = [];
     for (let i = 0; i < lines.length; i++) {
@@ -22,8 +15,8 @@ export const Day1: React.FC = () => {
     return { leftColumn, rightColumn };
   };
 
-  const calculateDiff = () => {
-    const { leftColumn, rightColumn } = getColumns();
+  const calculateDiff = (input: string): number => {
+    const { leftColumn, rightColumn } = getColumns(input);
 
     const sortedLeftColumn = leftColumn.sort((a, b) => a - b);
     const sortedRightColumn = rightColumn.sort((a, b) => a - b);
@@ -35,11 +28,11 @@ export const Day1: React.FC = () => {
       const diff = Math.abs(left - right);
       totalDiff += diff;
     }
-    setDiffResult(totalDiff);
+    return totalDiff;
   };
 
-  const calculateSimilarityScore = () => {
-    const { leftColumn, rightColumn } = getColumns();
+  const calculateSimilarityScore = (input: string): number => {
+    const { leftColumn, rightColumn } = getColumns(input);
     let totalScore = 0;
     for (let i = 0; i < leftColumn.length; i++) {
       const left = leftColumn[i];
@@ -54,25 +47,8 @@ export const Day1: React.FC = () => {
       totalScore += score;
     }
 
-    setSimilarityScore(totalScore);
+    return totalScore;
   };
 
-  return (
-    <Grid item xs={12}>
-      <Card>
-        <CardHeader title='Day 1' />
-        <CardContent>
-          <Button variant='contained' color='primary' onClick={calculateDiff}>
-            Calculate Diff
-          </Button>
-          <p>Diff: {diff}</p>
-
-          <Button variant='contained' color='primary' onClick={calculateSimilarityScore}>
-            Calculate Similarity Score
-          </Button>
-          <p>Similarity Score: {similarityScore}</p>
-        </CardContent>
-      </Card>
-    </Grid>
-  );
+  return <DayView day={1} part1Calculation={calculateDiff} part2Calculation={calculateSimilarityScore} />;
 };

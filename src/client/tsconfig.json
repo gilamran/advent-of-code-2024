@@ -17,5 +17,5 @@
       "@shared/*": ["../shared/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "../../assets/inputs/day3-input.ts", "../../inputs/day1-input.ts", "../../inputs/day2-input.ts"]
 }

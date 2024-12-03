@@ -1,11 +1,7 @@
-import { Button, CardHeader } from '@mui/material';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
 import React from 'react';
-import { Day2Input } from './day2-input';
+import { DayView } from './DayView';
 
-// const Day2Input = `7 6 4 2 1
+// const input = `7 6 4 2 1
 // 1 2 7 8 9
 // 9 7 6 2 1
 // 1 3 2 4 5
@@ -53,11 +49,8 @@ const isDecreasingWithTolerance = (numbers: number[]): boolean => {
 };
 
 export const Day2: React.FC = () => {
-  const [resultPart1, setResultPart1] = React.useState<number>(0);
-  const [resultPart2, setResultPart2] = React.useState<number>(0);
-
-  const calculatePart1 = () => {
-    const lines = Day2Input.split('\n');
+  const calculatePart1 = (input: string) => {
+    const lines = input.split('\n');
     let result = 0;
     for (const line of lines) {
       const numbers = line.split(' ').map((n) => parseInt(n, 10));
@@ -69,11 +62,11 @@ export const Day2: React.FC = () => {
         }
       }
     }
-    setResultPart1(result);
+    return result;
   };
 
-  const calculatePart2 = () => {
-    const lines = Day2Input.split('\n');
+  const calculatePart2 = (input: string) => {
+    const lines = input.split('\n');
     let result = 0;
     for (const line of lines) {
       const numbers = line.split(' ').map((n) => parseInt(n, 10));
@@ -85,24 +78,8 @@ export const Day2: React.FC = () => {
         }
       }
     }
-    setResultPart2(result);
+    return result;
   };
 
-  return (
-    <Grid item xs={12}>
-      <Card>
-        <CardHeader title='Day 2' />
-        <CardContent>
-          <Button variant='contained' color='primary' onClick={calculatePart1}>
-            Calculate Part 1
-          </Button>
-          <p>Result Part 1: {resultPart1}</p>
-          <Button variant='contained' color='primary' onClick={calculatePart2}>
-            Calculate Part 2
-          </Button>
-          <p>Result Part 2: {resultPart2}</p>
-        </CardContent>
-      </Card>
-    </Grid>
-  );
+  return <DayView day={2} part1Calculation={calculatePart1} part2Calculation={calculatePart2} />;
 };
