@@ -66,6 +66,9 @@ export const SideMenu: React.FC = () => {
         <ListItem disablePadding>
           <ListItemLink to='/day9' primary='Day 9' icon={<CalculateIcon />} />
         </ListItem>
+        <ListItem disablePadding>
+          <ListItemLink to='/day10' primary='Day 10' icon={<CalculateIcon />} />
+        </ListItem>
       </List>
     </Drawer>
   );

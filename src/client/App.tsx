@@ -13,6 +13,7 @@ import { Day6 } from './components/Day6';
 import { Day7 } from './components/Day7';
 import { Day8 } from './components/Day8';
 import { Day9 } from './components/Day9';
+import { Day10 } from './components/Day10';
 
 export const App = () => {
 
@@ -35,6 +36,7 @@ export const App = () => {
             <Route path='/day7' element={<Day7 />} />
             <Route path='/day8' element={<Day8 />} />
             <Route path='/day9' element={<Day9 />} />
+            <Route path='/day10' element={<Day10 />} />
           </Routes>
         </Box>
       </Box>
